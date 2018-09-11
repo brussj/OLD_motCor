@@ -17,37 +17,37 @@ ${researcherRoot}/
         ∟dicom/			Read-only archive
         |    ∟sub-${ursi}_ses-${mrqid}[_site-${site}].zip
         ∟nifti/			Read-only archive
-        |    ∟${ursi}/
-        |        ∟${mrqid}/
-        |            ∟anat/
-        |            |    ∟sub-${ursi}_ses-${mrqid}_${mod}.json
-        |            |    ∟sub-${ursi}_ses-${mrqid}_${mod}.nii.gz
-        |            ∟dwi/
-        |            |    ∟sub-${ursi}_ses-${mrqid}_dwi.bval
-        |            |    ∟sub-${ursi}_ses-${mrqid}_dwi.bvec
-        |            |    ∟sub-${ursi}_ses-${mrqid}_dwi.json
-        |            |    ∟sub-${ursi}_ses-${mrqid}_dwi.nii.gz
-        |            ∟fmap/
-        |            |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_magnitude.json
-        |            |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_magnitude.nii.gz
-        |            |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_phase.json
-        |            |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_phase.nii.gz
-        |            |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-AP.json
-        |            |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-AP.nii.gz
-        |            |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-PA.json
-        |            |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-PA.nii.gz
-        |            ∟func/
-        |            |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_bold.json
-        |            |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_bold.nii.gz
-        |            ∟mrs/
-        |            |    ∟sub-${ursi}_ses-${mrqid}_mrs_roi-${roi}.json
-        |            |    ∟sub-${ursi}_ses-${mrqid}_mrs_roi-${roi}.p
-        |            ∟other/
-        |            |    ∟sub-${ursi}_ses-${mrqid}_${mod}.json
-        |            |    ∟sub-${ursi}_ses-${mrqid}_${mod}.nii.gz
-        |            ∟qa/
-        |                ∟sub-${ursi}_ses-${mrqid}_qa_acq-${acq}.json
-        |                ∟sub-${ursi}_ses-${mrqid}_qa_acq-${acq}.nii.gz
+        |     ∟${ursi}/
+        |         ∟${mrqid}/
+        |              ∟anat/
+        |              |    ∟sub-${ursi}_ses-${mrqid}_${mod}.json
+        |              |    ∟sub-${ursi}_ses-${mrqid}_${mod}.nii.gz
+        |              ∟dwi/
+        |              |    ∟sub-${ursi}_ses-${mrqid}_dwi.bval
+        |              |    ∟sub-${ursi}_ses-${mrqid}_dwi.bvec
+        |              |    ∟sub-${ursi}_ses-${mrqid}_dwi.json
+        |              |    ∟sub-${ursi}_ses-${mrqid}_dwi.nii.gz
+        |              ∟fmap/
+        |              |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_magnitude.json
+        |              |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_magnitude.nii.gz
+        |              |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_phase.json
+        |              |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_phase.nii.gz
+        |              |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-AP.json
+        |              |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-AP.nii.gz
+        |              |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-PA.json
+        |              |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-PA.nii.gz
+        |              ∟func/
+        |              |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_bold.json
+        |              |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_bold.nii.gz
+        |              ∟mrs/
+        |              |    ∟sub-${ursi}_ses-${mrqid}_mrs_roi-${roi}.json
+        |              |    ∟sub-${ursi}_ses-${mrqid}_mrs_roi-${roi}.p
+        |              ∟other/
+        |              |    ∟sub-${ursi}_ses-${mrqid}_${mod}.json
+        |              |    ∟sub-${ursi}_ses-${mrqid}_${mod}.nii.gz
+        |              ∟qa/
+        |                   ∟sub-${ursi}_ses-${mrqid}_qa_acq-${acq}.json
+        |                   ∟sub-${ursi}_ses-${mrqid}_qa_acq-${acq}.nii.gz
         ∟deriv/
         |    ∟anat/
         |    |    ∟native/
@@ -61,10 +61,10 @@ ${researcherRoot}/
         |    |    |    ∟(sub-1234_ses-123456_T1w_pre-05-seg_class-gm.nii.gz)
         |    |    |    ∟(sub-1234_ses-123456_T1w_pre-05-seg_class-wm.nii.gz)
         |    |    ∟reg_[${space}]/ (e.g. mni, etc. [accompanying transforms in tform folder])
-        |    ∟b2/				(Brains2; legacy support only)
-        |    ∟baw/				(BrainsAutoWorkup)
+        |    ∟b2/  (Brains2; legacy support only)
+        |    ∟baw/  (BrainsAutoWorkup)
         |    ∟dwi/
-        |    ∟fsurf/			(Freesurfer)
+        |    ∟fsurf/ (Freesurfer subject directory)
         |    ∟func/
         |    |    ∟ts/
         |    |    |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_[_pre-${order}-${proc}].nii.gz
