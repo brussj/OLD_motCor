@@ -15,7 +15,7 @@ ${mrqid}=session identifier
 ${researcherRoot}/
       ∟${projectName}/
           ∟dicom/			Read-only archive
-          |	  ∟sub-${ursi}_ses-${mrqid}.zip
+          |	  ∟sub-${ursi}_ses-${mrqid}[_site-${site}].zip
           ∟nifti/			Read-only archive
           |	  ∟${ursi}/
           |		    ∟${mrqid}/
