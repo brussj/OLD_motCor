@@ -3,7 +3,7 @@
 
 ### Mission Statement
 Restructure personnel and technologies to streamline neuroimage processing in order to provide:
-  * ‘on-arrival’ image processing
+  * ‘on-arrival,’ automated image processing
   * immediate quality control
   * neuroimage processing at the cutting edge of available tools
   * an intuitive data product to facilitate more timely research, growth in serviceable projects, and multi-site collaborations.
