@@ -13,79 +13,79 @@ ${mrqid}=session identifier
 # Data Structure
 ```
 ${researcherRoot}/
-      ∟${projectName}/
-          ∟dicom/			Read-only archive
-          |	  ∟sub-${ursi}_ses-${mrqid}[_site-${site}].zip
-          ∟nifti/			Read-only archive
-          |	  ∟${ursi}/
-          |		    ∟${mrqid}/
-          |			      ∟anat/
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_${mod}.json
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_${mod}.nii.gz
-          |			      ∟dwi/
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_dwi.bval
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_dwi.bvec
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_dwi.json
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_dwi.nii.gz
-          |			      ∟fmap/
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_task-${task}_magnitude.json
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_task-${task}_magnitude.nii.gz
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_task-${task}_phase.json
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_task-${task}_phase.nii.gz
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-AP.json
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-AP.nii.gz
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-PA.json
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-PA.nii.gz
-          |			      ∟func/
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_task-${task}_bold.json
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_task-${task}_bold.nii.gz
-          |			      ∟mrs/
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_mrs_roi-${roi}.json
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_mrs_roi-${roi}.p
-          |			      ∟other/
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_${mod}.json
-          |			      |	  ∟sub-${ursi}_ses-${mrqid}_${mod}.nii.gz
-          |			      ∟qa/
-          |				        ∟sub-${ursi}_ses-${mrqid}_qa_acq-${acq}.json
-          |				        ∟sub-${ursi}_ses-${mrqid}_qa_acq-${acq}.nii.gz
-          ∟deriv/
-          |	  ∟anat/
-          |	  |	  ∟native/
-          |	  |	  |	  ∟sub-${ursi}_ses-${mrqid}_${mod}[_pre-${order}-${proc}].nii.gz
-          |	  |	  |	  ∟sub-${ursi}_ses-${mrqid}_${mod}[_mask-${roi}].nii.gz
-          |	  |	  |	  ∟(sub-1234_ses-123456_T1w_pre-01-acpc.nii.gz)
-          |	  |	  |	  ∟(sub-1234_ses-123456_T1w_pre-02-dn.nii.gz)
-          |	  |	  |	  ∟(sub-1234_ses-123456_T1w_pre-03-bc.nii.gz)
-          |	  |	  |	  ∟(sub-1234_ses-123456_T1w_pre-04-bex.nii.gz)
-          |	  |	  |	  ∟(sub-1234_ses-123456_T1w_pre-05-seg_class-csf.nii.gz)
-          |	  |	  |	  ∟(sub-1234_ses-123456_T1w_pre-05-seg_class-gm.nii.gz)
-          |	  |	  |	  ∟(sub-1234_ses-123456_T1w_pre-05-seg_class-wm.nii.gz)
-          |	  |	  ∟reg_[${space}]/ (e.g. mni, etc. [accompanying transforms in tform folder])
-          |	  ∟b2/				(Brains2; legacy support only)
-          |	  ∟baw/				(BrainsAutoWorkup)
-          |	  ∟dwi/
-          |	  ∟fsurf/			(Freesurfer)
-          |	  ∟func/
-          |	  |	  ∟ts/
-          |	  |	  |	  ∟sub-${ursi}_ses-${mrqid}_task-${task}_[_pre-${order}-${proc}].nii.gz
-          |	  |	  ∟stb/
-          |	  ∟mrs/
-          |	  ∟tform/
-          |	  ∟qc/
-          |	      ∟version_log/
-          ∟scripts
-          |	  ∟dicom_idx
-          |	  |	  ∟master_dicom-idx.tsv
-          |	  |	  |	- have a master for each study, copy and make changes for each subject
-          |	  |	  ∟sub-${ursi}_ses-${mrqid}_dicom-idx.tsv (tab-separated)
-          |	  |		  - column 1: scan directory inside zip file, e.g. /SCAN/1/DICOM,
-          |	  |		  - column 2: destination folder: anat, dwi, fmap, func, mrs, other, qa
-          |	  |		  - column 3: field name, e.g., mod, acq, task, roi, rec, run, echo, etc
-          |	  |		  - column 4: field value, e.g., [${mod}] T1w, [${task}] rest, etc.
-          ∟summary
-              ∟${projectName}_${data_description}_${YYYYMMDD}.csv
-              ∟(DM1_bt-volumetrics-wb_20180831.csv)
-              ∟(DM1_fsurf-volumetrics-all_20180831.csv)
+    ∟${projectName}/
+        ∟dicom/			Read-only archive
+        |    ∟sub-${ursi}_ses-${mrqid}[_site-${site}].zip
+        ∟nifti/			Read-only archive
+        |    ∟${ursi}/
+        |        ∟${mrqid}/
+        |            ∟anat/
+        |            |    ∟sub-${ursi}_ses-${mrqid}_${mod}.json
+        |            |    ∟sub-${ursi}_ses-${mrqid}_${mod}.nii.gz
+        |            ∟dwi/
+        |            |    ∟sub-${ursi}_ses-${mrqid}_dwi.bval
+        |            |    ∟sub-${ursi}_ses-${mrqid}_dwi.bvec
+        |            |    ∟sub-${ursi}_ses-${mrqid}_dwi.json
+        |            |    ∟sub-${ursi}_ses-${mrqid}_dwi.nii.gz
+        |            ∟fmap/
+        |            |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_magnitude.json
+        |            |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_magnitude.nii.gz
+        |            |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_phase.json
+        |            |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_phase.nii.gz
+        |            |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-AP.json
+        |            |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-AP.nii.gz
+        |            |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-PA.json
+        |            |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-PA.nii.gz
+        |            ∟func/
+        |            |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_bold.json
+        |            |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_bold.nii.gz
+        |            ∟mrs/
+        |            |    ∟sub-${ursi}_ses-${mrqid}_mrs_roi-${roi}.json
+        |            |    ∟sub-${ursi}_ses-${mrqid}_mrs_roi-${roi}.p
+        |            ∟other/
+        |            |    ∟sub-${ursi}_ses-${mrqid}_${mod}.json
+        |            |    ∟sub-${ursi}_ses-${mrqid}_${mod}.nii.gz
+        |            ∟qa/
+        |                ∟sub-${ursi}_ses-${mrqid}_qa_acq-${acq}.json
+        |                ∟sub-${ursi}_ses-${mrqid}_qa_acq-${acq}.nii.gz
+        ∟deriv/
+        |    ∟anat/
+        |    |    ∟native/
+        |    |    |    ∟sub-${ursi}_ses-${mrqid}_${mod}[_pre-${order}-${proc}].nii.gz
+        |    |    |    ∟sub-${ursi}_ses-${mrqid}_${mod}[_mask-${roi}].nii.gz
+        |    |    |    ∟(sub-1234_ses-123456_T1w_pre-01-acpc.nii.gz)
+        |    |    |    ∟(sub-1234_ses-123456_T1w_pre-02-dn.nii.gz)
+        |    |    |    ∟(sub-1234_ses-123456_T1w_pre-03-bc.nii.gz)
+        |    |    |    ∟(sub-1234_ses-123456_T1w_pre-04-bex.nii.gz)
+        |    |    |    ∟(sub-1234_ses-123456_T1w_pre-05-seg_class-csf.nii.gz)
+        |    |    |    ∟(sub-1234_ses-123456_T1w_pre-05-seg_class-gm.nii.gz)
+        |    |    |    ∟(sub-1234_ses-123456_T1w_pre-05-seg_class-wm.nii.gz)
+        |    |    ∟reg_[${space}]/ (e.g. mni, etc. [accompanying transforms in tform folder])
+        |    ∟b2/				(Brains2; legacy support only)
+        |    ∟baw/				(BrainsAutoWorkup)
+        |    ∟dwi/
+        |    ∟fsurf/			(Freesurfer)
+        |    ∟func/
+        |    |    ∟ts/
+        |    |    |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_[_pre-${order}-${proc}].nii.gz
+        |    |    ∟stb/
+        |    ∟mrs/
+        |    ∟tform/
+        |    ∟qc/
+        |    ∟log/
+        ∟scripts
+        |    ∟dicom_idx
+        |    |    ∟master_dicom-idx.tsv
+        |    |    |    - have a master for each study, copy and make changes for each subject
+        |    |    ∟sub-${ursi}_ses-${mrqid}_dicom-idx.tsv (tab-separated)
+        |    |         - column 1: scan directory inside zip file, e.g. /SCAN/1/DICOM,
+        |    |         - column 2: destination folder: anat, dwi, fmap, func, mrs, other, qa
+        |    |         - column 3: field name, e.g., mod, acq, task, roi, rec, run, echo, etc
+        |    |         - column 4: field value, e.g., [${mod}] T1w, [${task}] rest, etc.
+        ∟summary
+             ∟${projectName}_${data_description}_${YYYYMMDD}.csv
+             ∟(DM1_bt-volumetrics-wb_20180831.csv)
+             ∟(DM1_fsurf-volumetrics-all_20180831.csv)
 ```
 
 # Filename Fields (and order)
