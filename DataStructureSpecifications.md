@@ -91,7 +91,7 @@ ${researcherRoot}/
 # Filename Fields (and order)
 ```
 anat/
-sub-${ursi}_ses-${mrqid}_${mod}[_acq-${acq}][_run-${#}][_echo-${#}]
+sub-${ursi}_ses-${mrqid}[_acq-${acq}][_run-${#}][_echo-${#}]_${mod}
 mod=T1w|T2w|T1rho|T1map|T2map|T2star|FLAIR|FLASH|PD|PDT2|inplaneT1|inplaneT2|angio
 
 dwi/
