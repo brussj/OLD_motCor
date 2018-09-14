@@ -61,44 +61,46 @@ ${researcherRoot}/
         |    |    |    ∟(sub-1234_ses-123456_T1w_pre-05-seg_class-gm.nii.gz)
         |    |    |    ∟(sub-1234_ses-123456_T1w_pre-05-seg_class-wm.nii.gz)
         |    |    ∟reg_[${space}]/ (e.g. mni, etc. [accompanying transforms in tform folder])
-        |    ∟b2/  
-                   Files - (Brains2; legacy support only)
-                    ${mrqid}_SumGrad.nii.gz
-                    ${mrqid}_T1.nii.gz
-                    ${mrqid}_T1.xfrm
-                    ${mrqid}_T2.mat
-                    ${mrqid}_T2.nii.gz
-                    ${mrqid}_T2.xfrm
-                    ${mrqid}_brain_cut.mask
-                    ${mrqid}_class.nii.gz
-                    ${mrqid}_class_Tissue_Class.mdl
-                    ${mrqid}_cortex.mask
-                    ANNCutOutl_ant_crblAutoSeg.nii.gz
-                    ANNCutOutl_caudateAutoSeg.nii.gz
-                    ANNCutOutl_corpus_crblAutoSeg.nii.gz
-                    ANNCutOutl_hippoAutoSeg.nii.gz
-                    ANNCutOutl_infpost_crblAutoSeg.nii.gz
-                    ANNCutOutl_putamenAutoSeg.nii.gz
-                    ANNCutOutl_suppost_crblAutoSeg.nii.gz
-                    ANNCutOutl_thalamusAutoSeg.nii.gz
-                    ANNCutOutr_ant_crblAutoSeg.nii.gz
-                    ANNCutOutr_caudateAutoSeg.nii.gz
-                    ANNCutOutr_corpus_crblAutoSeg.nii.gz
-                    ANNCutOutr_hippoAutoSeg.nii.gz
-                    ANNCutOutr_infpost_crblAutoSeg.nii.gz
-                    ANNCutOutr_putamenAutoSeg.nii.gz
-                    ANNCutOutr_suppost_crblAutoSeg.nii.gz
-                    ANNCutOutr_thalamusAutoSeg.nii.gz
-                    ANNSummedgross_crblAutoSeg.nii.gz
-                    ANNThreshgross_crblAutoSeg.mask
-                    ANNThreshl_ant_crblAutoSeg.mask
-                    ANNThreshl_caudateAutoSeg.mask
-                    ANNThreshl_corpus_crblAutoSeg.mask
-                    ANNThreshl_hippoAutoSeg.mask
-                    ANNThreshl_infpost_crblAutoSeg.mask
-                    ANNThreshl_putamenAutoSeg.mask
-                    ANNThreshl_suppost_crblAutoSeg.mask
-                    ANNThreshl_thalamusAutoSeg.mask
+        |    ∟b2/   - (Brains2; legacy support only)
+                ∟${ursi}/
+                    ∟${mrqid}
+                        ∟10_AUTO.v020<GE>
+                        ${mrqid}_SumGrad.nii.gz
+                        ${mrqid}_T1.nii.gz
+                        ${mrqid}_T1.xfrm
+                        ${mrqid}_T2.mat
+                        ${mrqid}_T2.nii.gz
+                        ${mrqid}_T2.xfrm
+                        ${mrqid}_brain_cut.mask
+                        ${mrqid}_class.nii.gz
+                        ${mrqid}_class_Tissue_Class.mdl
+                        ${mrqid}_cortex.mask
+                        ANNCutOutl_ant_crblAutoSeg.nii.gz
+                        ANNCutOutl_caudateAutoSeg.nii.gz
+                        ANNCutOutl_corpus_crblAutoSeg.nii.gz
+                        ANNCutOutl_hippoAutoSeg.nii.gz
+                        ANNCutOutl_infpost_crblAutoSeg.nii.gz
+                        ANNCutOutl_putamenAutoSeg.nii.gz
+                        ANNCutOutl_suppost_crblAutoSeg.nii.gz
+                        ANNCutOutl_thalamusAutoSeg.nii.gz
+                        ANNCutOutr_ant_crblAutoSeg.nii.gz
+                        ANNCutOutr_caudateAutoSeg.nii.gz
+                        ANNCutOutr_corpus_crblAutoSeg.nii.gz
+                        ANNCutOutr_hippoAutoSeg.nii.gz
+                        ANNCutOutr_infpost_crblAutoSeg.nii.gz
+                        ANNCutOutr_putamenAutoSeg.nii.gz
+                        ANNCutOutr_suppost_crblAutoSeg.nii.gz
+                        ANNCutOutr_thalamusAutoSeg.nii.gz
+                        ANNSummedgross_crblAutoSeg.nii.gz
+                        ANNThreshgross_crblAutoSeg.mask
+                        ANNThreshl_ant_crblAutoSeg.mask
+                        ANNThreshl_caudateAutoSeg.mask
+                        ANNThreshl_corpus_crblAutoSeg.mask
+                        ANNThreshl_hippoAutoSeg.mask
+                        ANNThreshl_infpost_crblAutoSeg.mask
+                        ANNThreshl_putamenAutoSeg.mask
+                        ANNThreshl_suppost_crblAutoSeg.mask
+                        ANNThreshl_thalamusAutoSeg.mask
                     ANNThreshr_ant_crblAutoSeg.mask
                     ANNThreshr_caudateAutoSeg.mask
                     ANNThreshr_corpus_crblAutoSeg.mask
@@ -225,6 +227,9 @@ ${researcherRoot}/
                         COPY_${mrqid}_T1_LNR_NoNk.nii.gz
                         COPY_${mrqid}_T2.nii.gz
         |    ∟baw/  (BrainsAutoWorkup)
+                ∟${ursi}/
+                    ∟${mrqid}/
+                    
         |    ∟dwi/
         |    ∟fsurf/ (Freesurfer subject directory)
         |    ∟func/
