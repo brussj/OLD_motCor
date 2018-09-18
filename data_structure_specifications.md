@@ -8,7 +8,7 @@ Date:   September 11, 2018
 ```
 [] = optional, ()=example, {}=variable
 ${ursi}=subject identifier
-${mrqid}=session identifier -> YYMMDDHH
+${mrqid}=session identifier -> YYMMDDHHMM
 ${site}=site/scanner identifier -> #### (see lookup table)
     ∟2-digit site identifier, e.g., UIHC - 00
     ∟2-digit scanner identifier, e.g., UIHC GE 3T - 00; UIHC GE 7T - 01
