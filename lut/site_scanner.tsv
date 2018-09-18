@@ -1,4 +1,4 @@
 site_name	site_code	scanner_desc	scanner_code
-UIHC  00  Siemens 00
+UIHC	00	Siemens	00
 UIHC	00	GE_3T	01
 UIHC	00	GE_7T	02
