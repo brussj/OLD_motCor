@@ -8,20 +8,24 @@ Date:   September 11, 2018
 ```
 [] = optional, ()=example, {}=variable
 ${ursi}=subject identifier
-${mrqid}=session identifier
+${mrqid}=session identifier -> YYMMDDHH
+${site}=site/scanner identifier -> #### (see lookup table)
+    ∟2-digit site identifier, e.g., UIHC - 00
+    ∟2-digit scanner identifier, e.g., UIHC GE 3T - 00; UIHC GE 7T - 01
 ```
 # Data Structure
 ```
 ${researcherRoot}/
     ∟${projectName}/
+        ∟participants.tsv
         ∟dicom/			Read-only archive
-        |    ∟sub-${ursi}_ses-${mrqid}[_site-${site}].zip
+        |    ∟sub-${ursi}_ses-${mrqid}_site-${site}.zip
         ∟nifti/			Read-only archive
         |     ∟${ursi}/
         |         ∟${mrqid}/
         |              ∟anat/
-        |              |    ∟sub-${ursi}_ses-${mrqid}_${mod}.json
-        |              |    ∟sub-${ursi}_ses-${mrqid}_${mod}.nii.gz
+        |              |    ∟sub-${ursi}_ses-${mrqid}_acq-${acq}_${mod}.json
+        |              |    ∟sub-${ursi}_ses-${mrqid}_acq-${acq}_${mod}.nii.gz
         |              ∟dwi/
         |              |    ∟sub-${ursi}_ses-${mrqid}_dwi.bval
         |              |    ∟sub-${ursi}_ses-${mrqid}_dwi.bvec
@@ -48,7 +52,7 @@ ${researcherRoot}/
         |              ∟qa/
         |                   ∟sub-${ursi}_ses-${mrqid}_qa_acq-${acq}.json
         |                   ∟sub-${ursi}_ses-${mrqid}_qa_acq-${acq}.nii.gz
-        ∟deriv/
+        ∟derivatives/
         |    ∟anat/
         |    |    ∟native/
         |    |    |    ∟sub-${ursi}_ses-${mrqid}_${mod}[_pre-${order}-${proc}].nii.gz
@@ -73,15 +77,16 @@ ${researcherRoot}/
         |    ∟tform/
         |    ∟qc/
         |    ∟log/
-        ∟scripts
+        ∟code
         |    ∟dicom_idx
-        |    |    ∟master_dicom-idx.tsv
-        |    |    |    - have a master for each study, copy and make changes for each subject
-        |    |    ∟sub-${ursi}_ses-${mrqid}_dicom-idx.tsv (tab-separated)
-        |    |         - column 1: scan directory inside zip file, e.g. /SCAN/1/DICOM,
-        |    |         - column 2: destination folder: anat, dwi, fmap, func, mrs, other, qa
-        |    |         - column 3: field name, e.g., mod, acq, task, roi, rec, run, echo, etc
-        |    |         - column 4: field value, e.g., [${mod}] T1w, [${task}] rest, etc.
+        |         ∟master_dicom-idx.tsv
+        |         |    - have a master for each study, copy and make changes for each subject
+        |         ∟sub-${ursi}_ses-${mrqid}_dicom-idx.tsv (tab-separated)
+        |              - column 1: scan directory inside zip file, e.g. /SCAN/1/DICOM,
+        |              - column 2: destination folder: anat, dwi, fmap, func, mrs, other, qa
+        |              - column 3: field name, e.g., mod, acq, task, roi, rec, run, echo, etc
+        |              - column 4: field value, e.g., [${mod}] T1w, [${task}] rest, etc.
+        ∟stimuli
         ∟summary
              ∟${projectName}_${data_description}_${YYYYMMDD}.csv
              ∟(DM1_bt-volumetrics-wb_20180831.csv)
@@ -91,7 +96,7 @@ ${researcherRoot}/
 # Filename Fields (and order)
 ```
 anat/
-sub-${ursi}_ses-${mrqid}[_acq-${acq}][_run-${#}][_echo-${#}]_${mod}
+sub-${ursi}_ses-${mrqid}_acq-${acq}[_run-${#}][_echo-${#}]_${mod}
 mod=T1w|T2w|T1rho|T1map|T2map|T2star|FLAIR|FLASH|PD|PDT2|inplaneT1|inplaneT2|angio
 
 dwi/
