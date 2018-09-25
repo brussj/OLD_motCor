@@ -33,8 +33,8 @@
   b. b0 to anat (*III.*)  
   c. func (*avg*) to b0 (*IV.*)  
 6. Push data to standard space  
+  a. Multi-region segmentation  
     -Cortex, Insula, Thalamus, Basal Ganglia, Cerebellum, Brainstem and Pons
       * In atlas space  
-  a. Multi-region segmentation  
   b. Tissue Class segmentation  
   c. Skull-stripping  
