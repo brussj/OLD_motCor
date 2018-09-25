@@ -7,11 +7,11 @@ Date:   September 25, 2018
 ## Key:
 ```
 [] = optional, ()=example, {}=variable
-${ursi}=subject identifier
-${mrqid}=session identifier -> YYMMDDHHMM
-${site}=site/scanner identifier -> #### (see lookup table)
-    ∟2-digit site identifier, e.g., UIHC - 00
-    ∟2-digit scanner identifier, e.g., UIHC GE 3T - 00; UIHC GE 7T - 01
+${subject} = subject identifier
+${session} = session identifier -> YYMMDDHHMM
+${site} = site/scanner identifier -> ##### 
+https://github.com/TKoscik/nimg_core/blob/master/lut/site_scanner.tsv
+
 ```
 # Data Structure
 ```
@@ -19,44 +19,44 @@ ${researcherRoot}/
     ∟${projectName}/
         ∟participants.tsv
         ∟dicom/			Read-only archive
-        |    ∟sub-${ursi}_ses-${mrqid}_site-${site}.zip
+        |    ∟sub-${subject}_ses-${mrqid}_site-${site}.zip
         ∟nifti/			Read-only archive
-        |     ∟${ursi}/
-        |         ∟${mrqid}/
+        |     ∟${subject}/
+        |         ∟${session}/
         |              ∟anat/
-        |              |    ∟sub-${ursi}_ses-${mrqid}_acq-${acq}[_run-${run}]_${mod}.json
-        |              |    ∟sub-${ursi}_ses-${mrqid}_acq-${acq}[_run-${run}]_${mod}.nii.gz
+        |              |    ∟sub-${subject}_ses-${session}_acq-${acq}[_run-${run}]_${mod}.json
+        |              |    ∟sub-${subject}_ses-${session}_acq-${acq}[_run-${run}]_${mod}.nii.gz
         |              ∟dwi/
-        |              |    ∟sub-${ursi}_ses-${mrqid}_dwi.bval
-        |              |    ∟sub-${ursi}_ses-${mrqid}_dwi.bvec
-        |              |    ∟sub-${ursi}_ses-${mrqid}_dwi.json
-        |              |    ∟sub-${ursi}_ses-${mrqid}_dwi.nii.gz
+        |              |    ∟sub-${subject}_ses-${session}_dwi.bval
+        |              |    ∟sub-${subject}_ses-${session}_dwi.bvec
+        |              |    ∟sub-${subject}_ses-${session}_dwi.json
+        |              |    ∟sub-${subject}_ses-${session}_dwi.nii.gz
         |              ∟fmap/
-        |              |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_magnitude.json
-        |              |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_magnitude.nii.gz
-        |              |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_phase.json
-        |              |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_phase.nii.gz
-        |              |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-AP.json
-        |              |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-AP.nii.gz
-        |              |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-PA.json
-        |              |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-PA.nii.gz
+        |              |    ∟sub-${subject}_ses-${session}_task-${task}_magnitude.json
+        |              |    ∟sub-${subject}_ses-${session}_task-${task}_magnitude.nii.gz
+        |              |    ∟sub-${subject}_ses-${session}_task-${task}_phase.json
+        |              |    ∟sub-${subject}_ses-${session}_task-${task}_phase.nii.gz
+        |              |    ∟sub-${subject}_ses-${session}_spinecho_pe-AP.json
+        |              |    ∟sub-${subject}_ses-${session}_spinecho_pe-AP.nii.gz
+        |              |    ∟sub-${subject}_ses-${session}_spinecho_pe-PA.json
+        |              |    ∟sub-${subject}_ses-${session}_spinecho_pe-PA.nii.gz
         |              ∟func/
-        |              |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_run-${run}_bold.json
-        |              |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_run-${run}_bold.nii.gz
+        |              |    ∟sub-${subject}_ses-${session}_task-${task}_run-${run}_bold.json
+        |              |    ∟sub-${subject}_ses-${session}_task-${task}_run-${run}_bold.nii.gz
         |              ∟mrs/
-        |              |    ∟sub-${ursi}_ses-${mrqid}_mrs_roi-${roi}.json
-        |              |    ∟sub-${ursi}_ses-${mrqid}_mrs_roi-${roi}.p
+        |              |    ∟sub-${subject}_ses-${session}_mrs_roi-${roi}.json
+        |              |    ∟sub-${subject}_ses-${session}_mrs_roi-${roi}.p
         |              ∟other/
-        |              |    ∟sub-${ursi}_ses-${mrqid}_${mod}.json
-        |              |    ∟sub-${ursi}_ses-${mrqid}_${mod}.nii.gz
+        |              |    ∟sub-${subject}_ses-${session}_${mod}.json
+        |              |    ∟sub-${subject}_ses-${session}_${mod}.nii.gz
         |              ∟qa/
-        |                   ∟sub-${ursi}_ses-${mrqid}_qa_acq-${acq}.json
-        |                   ∟sub-${ursi}_ses-${mrqid}_qa_acq-${acq}.nii.gz
+        |                   ∟sub-${subject}_ses-${session}_qa_acq-${acq}.json
+        |                   ∟sub-${subject}_ses-${session}_qa_acq-${acq}.nii.gz
         ∟derivatives/
         |    ∟anat/
         |    |    ∟native/
-        |    |    |    ∟sub-${ursi}_ses-${mrqid}_${mod}[_pre-${order}-${proc}].nii.gz
-        |    |    |    ∟sub-${ursi}_ses-${mrqid}_${mod}[_mask-${roi}].nii.gz
+        |    |    |    ∟sub-${subject}_ses-${session}_${mod}[_pre-${order}-${proc}].nii.gz
+        |    |    |    ∟sub-${subject}_ses-${session}_${mod}[_mask-${roi}].nii.gz
         |    |    ∟prep/
         |    |    |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-acpc.nii.gz
         |    |    |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-avg.nii.gz
@@ -82,14 +82,7 @@ ${researcherRoot}/
         |    ∟qc/
         |    ∟log/
         ∟code
-        |    ∟dicom_idx
-        |         ∟master_dicom-idx.tsv
-        |         |    - have a master for each study, copy and make changes for each subject
-        |         ∟sub-${ursi}_ses-${mrqid}_dicom-idx.tsv (tab-separated)
-        |              - column 1: scan directory inside zip file, e.g. /SCAN/1/DICOM,
-        |              - column 2: destination folder: anat, dwi, fmap, func, mrs, other, qa
-        |              - column 3: field name, e.g., mod, acq, task, roi, rec, run, echo, etc
-        |              - column 4: field value, e.g., [${mod}] T1w, [${task}] rest, etc.
+        ∟lut
         ∟stimuli
         ∟summary
              ∟${projectName}_${data_description}_${YYYYMMDD}.csv
