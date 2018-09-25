@@ -36,5 +36,5 @@
   a. Multi-region segmentation  
     1. Cortex, Insula, Thalamus, Basal Ganglia, Cerebellum, Brainstem and Pons  
     2. In atlas space  
-  b. Tissue Class segmentation  
-  c. Skull-stripping  
+b. Tissue Class segmentation  
+c. Skull-stripping  
