@@ -1,29 +1,69 @@
-# Resting State fMRI Preprocessing Pipeline
-1. DICOM conversion to NIfTI
-  a. Assumes that anat [*T1*] to atlas [*standard*] transforms already exist
-  b. Create anat to standard transforms if missing [*2mm or 3mm space*]
-  c. Allow for multiple standard atlas transforms
-    - MNI152
-    - MNI 2009c
-    - CIT168
-    - HCP S1200
-    - Koscik HCP
-7. Bias field correction  
-  a. T1/T2 debiasing [*T1 and T2 co-acquisition*]  
-  b. N4 debiasing [*T1 only acquisition*]  
-  c. Iterative N4 debiasing and segmentation [*atroposN4*]
-8. DICOM conversion to NIfTI  
-  a. T1/T2 debiasing [*T1 and T2 co-acquisition*]  
-  b. N4 debiasing [*T1 only acquisition*]  
-  c. Iterative N4 debiasing and segmentation [*atroposN4*]
+# Resting State fMRI Preprocessing Pipeline  
 1. DICOM conversion to NIfTI  
   a. Assumes that anat (*T1*) to atlas (*standard*) transforms already exist  
   b. Create anat to standard transforms if missing (*2x2x2, 3x3x3 space?*)  
   c. Allow for multiple standard atlas transforms  
-    * MNI152  
+    - MNI152  
     - MNI 2009c  
     - CIT168  
     - HCP S1200  
     - Koscik HCP  
-      * test  
-      * test2  
+2. Reorient to RPI/LPI  
+3. Motion correction (*e.g. https://stnava.github.io/fMRIANTs , https://github.com/ANTsX/ANTsR/blob/master/R/preprocessfMRI.R#L44-L46*)  
+  a. 3dvolreg (*AFNI*)  
+  b. mcflirt (*FSL*)  
+  c. antsMotionCorr (*ANTs*)  
+    - affine or affine & deformable correction  
+      * Average the time series (*for registration*)  
+      * Might be possible to do both in one step (*-o [outputTransformPrefix,<outputWarpedImage>,<outputAverageImage>]*)  
+    - Target scan of average volume or halway point?  
+      * Average the time series with antsMotionCorr, and align to that (*then optionally update average and correct again*)  
+    - Average of motion corrected TRs  
+    - Output motion parameters for regression?  
+    - Mask creation of average motion corrected volume  
+4. Distortion Correction  
+  a. Prepping of fieldMap (*fsl_prepare_fieldmap*)  
+  b. blip-up/blip-down (*topup and eddy* (*b0*))  
+    - Is there a way to get topup warps into ANTs compatible files?  
+      * Perform topup, use as target, ANTs registration from motion corrected average to b0 corrected volume  
+    - Mask creation of b0 (*corrected*)  
+    - b0 to anat registration  
+5. Summation of transforms  
+  a. anat to atlas (*I.*)  
+  b. b0 to anat (*III.*)  
+  c. func (*avg*) to b0 (*IV.*)  
+6. Push data to standard space  
+  a. Multi-region segmentation  
+    - Cortex, Insula, Thalamus, Basal Ganglia, Cerebellum, Brainstem and Pons  
+      * In atlas space  
+      * Joint Label Fusion per anat, pushed to standard  
+  b. Tissue Class segmentation  
+    - anat, pushed to standard  
+  c. Skull-stripping  
+7. Smoothing  
+  a. Per region, differentially (*e.g. STN < Cortex*)  
+    - SUSAN (*FSL*)  
+    - 3dBlurToFWHM (*AFNI*)  
+    - SmoothImage (*ANTs*)  
+8. Nuisance regression  
+  a. Motion parameters  
+    - Bandpass these same as func (*1dBandpass*)  
+  b. WM, CSF  
+    - Model the timecourse from an ROI (*e.g. FEAT*)  
+    - CompCor  
+  c. Global signal  
+    - Positive and Negative correlations (*~mean centered*)  
+  d. ICA-based removal of noise  
+    - melodic & fsl_regfilt  
+    - ICA-AROMA  
+  e. Filtering  
+    - Lowpass filter (*retain "high" frequencies*)  
+    - Bandpass filter  
+      * 0.008 to 0.8 HZ  
+      * 0.009 to 0.1 Hz  
+      * 0.01 to 0.1 Hz  
+9. Motion scrubbing  
+10. Concatenate multiple runs  
+  a. Normalize final file  
+    - subtract mean, divide by standard deviation, add value 1000 (*timecourse will be centered around 1000*)  
+11.  Celebrate life, drink a beer  
