@@ -1,5 +1,5 @@
 # Resting State fMRI Preprocessing Pipeline
-1. test
-  a. subtest
-  b. subtest2
-2. test2
+7. Bias field correction  
+  a. T1/T2 debiasing [*T1 and T2 co-acquisition*]  
+  b. N4 debiasing [*T1 only acquisition*]  
+  c. Iterative N4 debiasing and segmentation [*atroposN4*] 
