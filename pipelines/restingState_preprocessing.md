@@ -2,8 +2,8 @@
 
 1. DICOM conversion to NIfTI
 	a. Assumes that anat (T1) to atlas (standard) transforms already exist
-  b. Create anat to standard transforms if missing (2x2x2, 3x3x3 space?)
-  c. Allow for multiple standard atlas transforms
+	b. Create anat to standard transforms if missing (2x2x2, 3x3x3 space?)
+	c. Allow for multiple standard atlas transforms
   MNI152
     2. MNI 2009c
     3. CIT168
