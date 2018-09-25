@@ -2,7 +2,7 @@
 ## Iowa Imaging Data Science Core
 
 Author: Timothy R. Koscik, PhD
-Date:   September 11, 2018
+Date:   September 25, 2018
 
 ## Key:
 ```
@@ -57,13 +57,17 @@ ${researcherRoot}/
         |    |    ∟native/
         |    |    |    ∟sub-${ursi}_ses-${mrqid}_${mod}[_pre-${order}-${proc}].nii.gz
         |    |    |    ∟sub-${ursi}_ses-${mrqid}_${mod}[_mask-${roi}].nii.gz
-        |    |    |    ∟(sub-1234_ses-123456_T1w_pre-01-acpc.nii.gz)
-        |    |    |    ∟(sub-1234_ses-123456_T1w_pre-02-dn.nii.gz)
-        |    |    |    ∟(sub-1234_ses-123456_T1w_pre-03-bc.nii.gz)
-        |    |    |    ∟(sub-1234_ses-123456_T1w_pre-04-bex.nii.gz)
-        |    |    |    ∟(sub-1234_ses-123456_T1w_pre-05-seg_class-csf.nii.gz)
-        |    |    |    ∟(sub-1234_ses-123456_T1w_pre-05-seg_class-gm.nii.gz)
-        |    |    |    ∟(sub-1234_ses-123456_T1w_pre-05-seg_class-wm.nii.gz)
+        |    |    ∟prep/
+        |    |    |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-acpc.nii.gz
+        |    |    |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-avg.nii.gz
+        |    |    |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-bex0.nii.gz
+        |    |    |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-bex.nii.gz
+        |    |    |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-bc.nii.gz
+        |    |    |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-bias.nii.gz
+        |    |    |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-denoise.nii.gz
+        |    |    |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-gradunwarp.nii.gz
+        |    |    |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-readout.nii.gz
+        |    |    |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-seg?.nii.gz
         |    |    ∟reg_[${space}]/ (e.g. mni, etc. [accompanying transforms in tform folder])
         |    ∟b2/  (Brains2; legacy support only)
         |    ∟baw/  (BrainsAutoWorkup)
