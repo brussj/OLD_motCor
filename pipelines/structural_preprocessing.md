@@ -88,8 +88,8 @@ ${researcherRoot}/
       | ∟native/
       |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_native.nii.gz
       ∟tform/
-        ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_space-${acq}${mod}_tform-affine.mat
-        ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_space-${acq}${mod}_tform-syn.nii.gz
+        ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_ref-${acq}${mod}_tform-affine.mat
+        ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_ref-${acq}${mod}_tform-syn.nii.gz
 ```
 12. Normalization
   - between session registrations, i.e., register to participant baseline or average  
@@ -99,6 +99,7 @@ ${researcherRoot}/
       | ∟reg_${space}/
       |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_reg-${space}.nii.gz
       ∟tform/
-        ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_space-${space}_tform-affine.mat
-        ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_space-${space}_tform-syn.nii.gz
+        ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_ref-${space}_tform-0affine.mat
+        ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_ref-${space}_tform-1syn.nii.gz
+        ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_ref-${space}_tform-inverse.nii.gz
 ```
