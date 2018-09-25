@@ -34,10 +34,10 @@ ${researcherRoot}/
         |              |    ∟sub-${subject}_ses-${session}_task-${task}_magnitude.nii.gz
         |              |    ∟sub-${subject}_ses-${session}_task-${task}_phase.json
         |              |    ∟sub-${subject}_ses-${session}_task-${task}_phase.nii.gz
-        |              |    ∟sub-${subject}_ses-${session}_spinecho_pe-AP.json
-        |              |    ∟sub-${subject}_ses-${session}_spinecho_pe-AP.nii.gz
-        |              |    ∟sub-${subject}_ses-${session}_spinecho_pe-PA.json
-        |              |    ∟sub-${subject}_ses-${session}_spinecho_pe-PA.nii.gz
+        |              |    ∟sub-${subject}_ses-${session}_pe-AP_spinecho.json
+        |              |    ∟sub-${subject}_ses-${session}_pe-AP_spinecho.nii.gz
+        |              |    ∟sub-${subject}_ses-${session}_pe-PA_spinecho.json
+        |              |    ∟sub-${subject}_ses-${session}_pe-PA_spinecho.nii.gz
         |              ∟func/
         |              |    ∟sub-${subject}_ses-${session}_task-${task}_run-${run}_bold.json
         |              |    ∟sub-${subject}_ses-${session}_task-${task}_run-${run}_bold.nii.gz
