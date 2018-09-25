@@ -68,6 +68,3 @@
   a. Normalize final file
     1. subtract mean, divide by standard deviation, add value 1000 (timecourse will be centered around 1000)
 11.  Celebrate life, drink a beer
-
-
-
