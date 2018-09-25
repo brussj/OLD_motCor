@@ -9,6 +9,7 @@ updated: September 25, 2018
 `${session} = session identifier -> YYMMDDHHMM`  
 `${site} = site/scanner identifier -> #####`  
 [site lookup table](https://github.com/TKoscik/nimg_core/blob/master/lut/site_scanner.tsv)  
+[modality lookup table](https://github.com/TKoscik/nimg_core/blob/master/lut/modality_labels.tsv)  
 
 # Data Structure
 ```
@@ -16,7 +17,7 @@ ${researcherRoot}/
     ∟${projectName}/
         ∟participants.tsv
         ∟dicom/			Read-only archive
-        |    ∟sub-${subject}_ses-${mrqid}_site-${site}.zip
+        |    ∟sub-${subject}_ses-${session}_site-${site}.zip
         ∟nifti/			Read-only archive
         |     ∟${subject}/
         |         ∟${session}/
@@ -111,23 +112,4 @@ sub-${ursi}_ses-${mrqid}[_acq-${acq}][_b-${b}][_dir-${dir}][_pe-${pe}][_run-${#}
 func/
 sub-${ursi}_ses-${mrqid}_task-${task}[_acq-${acq}][_pe-${pe}][_rec-${}][_run-${#}][_echo-${#}]_${mod}.nii.gz
 mod=bold|T1rho
-```
-
-# Modality Labels - ${mod}
-```
-T1 weighted               T1w
-T2 weighted               T2w
-T1 rho                    T1rho
-quantitative T1 map       T1map
-quantitative T2 map       T2map
-T2*/SWE                   T2star
-FLAIR                     FLAIR
-FLASH                     FLASH
-Proton density            PD
-Proton density map        PDmap
-Combined PD/T2            PDT2
-Inplane T1                inplaneT1	          T1-weighted matched to functional acquisition
-Inplane T2                inplaneT2	          T2-weighted matched to functional acquisition
-Angiography               angio
-Spectroscopy              MRS
 ```
