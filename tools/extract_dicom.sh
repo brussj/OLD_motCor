@@ -131,7 +131,7 @@ else
 fi
 mkdir -p ${scratch}
 
-#unzip ${researcherRoot}/${projectName}/dicom/sub-${subject}_ses-${session}.zip -d ${scratch}
+unzip ${researcherRoot}/${projectName}/dicom/sub-${subject}_ses-${session}.zip -d ${scratch}
 
 ## locate tsv index file --------------------------------------------------------
 idxMaster=${researcherRoot}/${projectName}/scripts/dicom_idx/master_dicom_idx.tsv
