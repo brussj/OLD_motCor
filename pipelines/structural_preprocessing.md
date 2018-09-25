@@ -40,19 +40,13 @@ ${researcherRoot}/
         ∟prep/ [optional]
           ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-acpc.nii.gz
 ```
-6. Within-session, within-modality averaging  
-```
-      ∟anat/
-        ∟prep/ [optional]
-          ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-avg.nii.gz
-```
-7. Brain extraction (preliminary)  
+6. Brain extraction (preliminary)  
 ```
       ∟anat/
         ∟prep/ [optional]
           ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-bex0.nii.gz
 ```
-8. Bias field correction  
+7. Bias field correction  
   a. T1/T2 debiasing [*T1 and T2 co-acquisition*]  
   b. N4 debiasing [*T1 only acquisition*]  
   c. Iterative N4 debiasing and segmentation [*atroposN4*]  
@@ -60,6 +54,12 @@ ${researcherRoot}/
       ∟anat/
         ∟prep/ [optional]
           ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-bc.nii.gz
+```
+8. Within-session, within-modality averaging  
+```
+      ∟anat/
+        ∟prep/ [optional]
+          ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-avg.nii.gz
 ```
 9. Brain extraction  
 ```
