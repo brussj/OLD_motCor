@@ -37,6 +37,6 @@
     - Cortex, Insula, Thalamus, Basal Ganglia, Cerebellum, Brainstem and Pons  
       * In atlas space  
       * Joint Label Fusion per anat, pushed to standard  
-  b. Tissue Class segmentation  
+b. Tissue Class segmentation  
     - anat, pushed to standard  
   c. Skull-stripping  
