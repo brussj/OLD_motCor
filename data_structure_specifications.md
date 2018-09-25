@@ -1,8 +1,7 @@
 # Data Structure Specifications
 ## Iowa Imaging Data Science Core
 
-Author: Timothy R. Koscik, PhD
-Date:   September 25, 2018
+updated: September 25, 2018
 
 ## Key:
 `[] = optional, ()=example, {}=variable`  
@@ -53,8 +52,7 @@ ${researcherRoot}/
         ∟derivatives/
         |    ∟anat/
         |    |    ∟native/
-        |    |    |    ∟sub-${subject}_ses-${session}_${mod}[_pre-${order}-${proc}].nii.gz
-        |    |    |    ∟sub-${subject}_ses-${session}_${mod}[_mask-${roi}].nii.gz
+        |    |    |    ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_native.nii.gz
         |    |    ∟prep/
         |    |    |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-acpc.nii.gz
         |    |    |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-avg.nii.gz
@@ -66,7 +64,8 @@ ${researcherRoot}/
         |    |    |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-gradunwarp.nii.gz
         |    |    |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-readout.nii.gz
         |    |    |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-seg?.nii.gz
-        |    |    ∟reg_[${space}]/ (e.g. mni, etc. [accompanying transforms in tform folder])
+        |    |    ∟reg_[${space}]/
+        |    |        ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_reg-${space}.nii.gz
         |    ∟b2/  (Brains2; legacy support only)
         |    ∟baw/  (BrainsAutoWorkup)
         |    ∟dwi/
@@ -77,7 +76,19 @@ ${researcherRoot}/
         |    |    ∟stb/
         |    ∟mrs/
         |    ∟tform/
+        |    |    ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_ref-${acq}${mod}_tform-affine.mat
+        |    |    ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_ref-${acq}${mod}_tform-syn.nii.gz
+        |    |    ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_ref-${space}_tform-0affine.mat
+        |    |    ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_ref-${space}_tform-1syn.nii.gz
+        |    |    ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_ref-${space}_tform-inverse.nii.gz
         |    ∟qc/
+        |    |    ∟scan_quality
+        |    |    ∟anat_prep
+        |    |    ∟func_prep
+        |    |    ∟dwi_prep
+        |    |    ∟label
+        |    |    ∟fsurf
+        |    |    ∟mrs
         |    ∟log/
         ∟code
         ∟lut
