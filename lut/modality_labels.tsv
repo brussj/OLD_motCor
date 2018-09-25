@@ -1,16 +1,16 @@
 modality	acronym	description
-T1 weighted T1w 
-T2 weighted	T2w 
-T1 rho	T1rho 
-quantitative T1 map	T1map 
-quantitative T2 map	T2map 
-T2*/SWE	T2star  
-FLAIR	FLAIR 
-FLASH	FLASH 
-Proton density	PD  
-Proton density map	PDmap 
-Combined PD/T2	PDT2  
+T1 weighted	T1w	
+T2 weighted	T2w	
+T1 rho	T1rho	
+quantitative T1 map	T1map	
+quantitative T2 map	T2map	
+T2*/SWE	T2star	
+FLAIR	FLAIR	
+FLASH	FLASH	
+Proton density	PD	
+Proton density map	PDmap	
+Combined PD/T2	PDT2	
 Inplane T1	inplaneT1	T1-weighted matched to functional acquisition
 Inplane T2	inplaneT2	T2-weighted matched to functional acquisition
-Angiography	angio 
-Spectroscopy	MRS 
+Angiography	angio	
+Spectroscopy	MRS	
