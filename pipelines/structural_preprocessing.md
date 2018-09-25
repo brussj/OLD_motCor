@@ -32,16 +32,23 @@ ${researcherRoot}/
           ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_seg-GM.nii.gz
           ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_seg-WM.nii.gz
 ```
-11. Coregistration   
+11. Coregistration  [*within-session only*]  
+  - coregistering multiple acquisitions of the same modality within a scanning session  
+  - coregistering multiple modalities within scanning sessions  
 ```
 ${researcherRoot}/
   ∟${projectName}/
     ∟derivatives/
       ∟anat/
-        ∟native/
-          ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep.nii.gz
+      | ∟native/
+      |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep.nii.gz
+      ∟tform/
+        ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_space-${acq}${mod}_tform-affine.mat
+        ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_space-${acq}${mod}_tform-syn.nii.gz
 ```
-11. Normalization
+12. Normalization
+  - between session registrations, i.e., register to participant baseline or average  
+  - registration to common space  
 ```
 ${researcherRoot}/
   ∟${projectName}/
