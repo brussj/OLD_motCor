@@ -1,7 +1,7 @@
 # Resting State fMRI Preprocessing Pipeline
 1. DICOM conversion to NIfTI
-  a. Assumes that anat (*T1*) to atlas (*standard*) transforms already exist
-  b. Create anat to standard transforms if missing (*2mm or 3mm space*)
+  a. Assumes that anat [*T1*] to atlas [*standard*] transforms already exist
+  b. Create anat to standard transforms if missing [*2mm or 3mm space*]
   c. Allow for multiple standard atlas transforms
     - MNI152
     - MNI 2009c
