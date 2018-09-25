@@ -13,6 +13,6 @@
   b. N4 debiasing [*T1 only acquisition*]  
   c. Iterative N4 debiasing and segmentation [*atroposN4*]
 7. DICOM conversion to NIfTI 
-  a. Assumes that anat [*T1*] to atlas [*standard*] transforms already exist
+  a. Assumes that anat 
   b. N4 debiasing [*T1 only acquisition*]  
   c. Iterative N4 debiasing and segmentation [*atroposN4*]  
