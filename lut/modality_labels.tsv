@@ -1,18 +1,19 @@
-modality	acronym	description
-T1 weighted	T1w	
-T2 weighted	T2w	
-T1 rho	T1rho	
-quantitative T1 map	T1map	
-quantitative T2 map	T2map	
-T2*/SWE	T2star	
-FLAIR	FLAIR	
-FLASH	FLASH	
-Proton density	PD	
-Proton density map	PDmap	
-Combined PD/T2	PDT2	
-Inplane T1	inplaneT1	T1-weighted matched to functional acquisition
-Inplane T2	inplaneT2	T2-weighted matched to functional acquisition
-Angiography	angio	
-Spectroscopy	MRS	
-BOLD	bold	
-DWI	dwi	
+type	modality	acronym	description
+anat	T1 weighted	T1w	
+anat	T2 weighted	T2w	
+anat	T1 rho	T1rho	
+anat	T2*/SWE	T2star	
+anat	FLAIR	FLAIR	
+anat	FLASH	FLASH	
+anat	Proton density	PD	
+anat	Angiography	angio	
+func	BOLD	bold	
+func	T1 rho	fT1rho	
+dwi	DWI	dwi	diffusion-weighted images
+mrs	Spectroscopy	MRS	
+anat	quantitative T1 map	T1map	
+anat	quantitative T2 map	T2map	
+anat	Inplane T1	inplaneT1	T1-weighted matched to functional acquisition
+anat	Inplane T2	inplaneT2	T2-weighted matched to functional acquisition
+anat	Proton density map	PDmap	
+anat	Combined PD/T2	PDT2	
