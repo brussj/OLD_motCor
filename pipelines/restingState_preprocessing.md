@@ -9,9 +9,7 @@
     3. CIT168
     4. HCP S1200
     5. Koscik HCP
-```
 2. Reorient to RPI/LPI
-```
 3. Motion correction (e.g. https://stnava.github.io/fMRIANTs , https://github.com/ANTsX/ANTsR/blob/master/R/preprocessfMRI.R#L44-L46)
   a. 3dvolreg (AFNI)
   b. mcflirt (FSL)
@@ -24,7 +22,6 @@
     3. Average of motion corrected TRs
     4. Output motion parameters for regression?
     5. Mask creation of average motion corrected volume
-```
 4. Distortion Correction
   a. Prepping of fieldMap (fsl_prepare_fieldmap)
   b. blip-up/blip-down (topup and eddy) -- b0
@@ -32,12 +29,10 @@
       a. Perform topup, use as target, ANTs registration from motion corrected average to b0 corrected volume
     2. Mask creation of b0 (corrected)
     3. b0 to anat registration
-```
 5. Summation of transforms
   a. anat to atlas (I.)
   b. b0 to anat (III.)
   c. func (avg) to b0 (IV.)
-```
 6. Push data to standard space
   a. Multi-region segmentation
     1. Cortex, Insula, Thalamus, Basal Ganglia, Cerebellum, Brainstem and Pons
@@ -46,13 +41,11 @@
   b. Tissue Class segmentation
     1. anat, pushed to standard
   c. Skull-stripping
-```
 7. Smoothing
   a. Per region, differentially (e.g. STN < Cortex)
     1. SUSAN (FSL)
     2. 3dBlurToFWHM (AFNI)
     3. SmoothImage (ANTs)
-```
 8. Nuisance regression
   a. Motion parameters
     1. Bandpass these same as func (1dBandpass)
@@ -70,13 +63,10 @@
       a. 0.008 to 0.8 HZ
       b. 0.009 to 0.1 Hz
       c. 0.01 to 0.1 Hz
-```
 9.  Motion scrubbing
-```
 10. Concatenate multiple runs
   a. Normalize final file
     1. subtract mean, divide by standard deviation, add value 1000 (timecourse will be centered around 1000)
-```
 11.  Celebrate life, drink a beer
 
 
