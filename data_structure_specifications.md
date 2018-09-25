@@ -7,12 +7,16 @@ Date:   September 25, 2018
 ## Key:
 ```
 [] = optional, ()=example, {}=variable
+```
+```
 ${subject} = subject identifier
 ${session} = session identifier -> YYMMDDHHMM
+```
+```
 ${site} = site/scanner identifier -> ##### 
+```
 [site lookup table](https://github.com/TKoscik/nimg_core/blob/master/lut/site_scanner.tsv)
 
-```
 # Data Structure
 ```
 ${researcherRoot}/
