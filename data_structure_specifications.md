@@ -24,8 +24,8 @@ ${researcherRoot}/
         |     ∟${ursi}/
         |         ∟${mrqid}/
         |              ∟anat/
-        |              |    ∟sub-${ursi}_ses-${mrqid}_acq-${acq}_${mod}.json
-        |              |    ∟sub-${ursi}_ses-${mrqid}_acq-${acq}_${mod}.nii.gz
+        |              |    ∟sub-${ursi}_ses-${mrqid}_acq-${acq}[_run-${run}]_${mod}.json
+        |              |    ∟sub-${ursi}_ses-${mrqid}_acq-${acq}[_run-${run}]_${mod}.nii.gz
         |              ∟dwi/
         |              |    ∟sub-${ursi}_ses-${mrqid}_dwi.bval
         |              |    ∟sub-${ursi}_ses-${mrqid}_dwi.bvec
@@ -41,8 +41,8 @@ ${researcherRoot}/
         |              |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-PA.json
         |              |    ∟sub-${ursi}_ses-${mrqid}_spinecho_pe-PA.nii.gz
         |              ∟func/
-        |              |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_bold.json
-        |              |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_bold.nii.gz
+        |              |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_run-${run}_bold.json
+        |              |    ∟sub-${ursi}_ses-${mrqid}_task-${task}_run-${run}_bold.nii.gz
         |              ∟mrs/
         |              |    ∟sub-${ursi}_ses-${mrqid}_mrs_roi-${roi}.json
         |              |    ∟sub-${ursi}_ses-${mrqid}_mrs_roi-${roi}.p
