@@ -1,56 +1,53 @@
 # Structural Preprocessing Pipeline
 
 1. DICOM conversion to NIfTI  
-2. Gradient distortion unwarping [*GradUnwarp [Freesurfer?] https://surfer.nmr.mgh.harvard.edu/fswiki/GradUnwarp*]  
+```
+${researcherRoot}/
+  ∟${projectName}/
+    ∟nifti/
+      ∟${subject}/
+        ∟${ssession}/
+          ∟anat/
+```
+
+Everything below will be stored in the deriviatives folder:
 ```
 ${researcherRoot}/
   ∟${projectName}/
     ∟derivatives/
+```
+2. Gradient distortion unwarping [*GradUnwarp [Freesurfer?] https://surfer.nmr.mgh.harvard.edu/fswiki/GradUnwarp*]  
+```
       ∟anat/
         ∟prep/ [optional]
           ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-gradunwarp.nii.gz
 ```
 3. Readout distortion correction [*figure out what this is*]  
 ```
-${researcherRoot}/
-  ∟${projectName}/
-    ∟derivatives/
       ∟anat/
         ∟prep/ [optional]
           ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-readout.nii.gz
 ```
 4. Rician denoising  
 ```
-${researcherRoot}/
-  ∟${projectName}/
-    ∟derivatives/
       ∟anat/
         ∟prep/ [optional]
           ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-denoise.nii.gz
 ```
 5. ACPC Alignment  
 ```
-${researcherRoot}/
-  ∟${projectName}/
-    ∟derivatives/
       ∟anat/
         ∟prep/ [optional]
           ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-acpc.nii.gz
 ```
 6. Within-session, within-modality averaging  
 ```
-${researcherRoot}/
-  ∟${projectName}/
-    ∟derivatives/
       ∟anat/
         ∟prep/ [optional]
           ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-avg.nii.gz
 ```
 7. Brain extraction (preliminary)  
 ```
-${researcherRoot}/
-  ∟${projectName}/
-    ∟derivatives/
       ∟anat/
         ∟prep/ [optional]
           ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-bex0.nii.gz
@@ -60,18 +57,12 @@ ${researcherRoot}/
   b. N4 debiasing [*T1 only acquisition*]  
   c. Iterative N4 debiasing and segmentation [*atroposN4*]  
 ```
-${researcherRoot}/
-  ∟${projectName}/
-    ∟derivatives/
       ∟anat/
         ∟prep/ [optional]
           ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_prep-bc.nii.gz
 ```
 9. Brain extraction  
 ```
-${researcherRoot}/
-  ∟${projectName}/
-    ∟derivatives/
       ∟anat/
         ∟mask/
         | ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_mask-brain.nii.gz
@@ -81,9 +72,6 @@ ${researcherRoot}/
 ```
 10. Tissue segmentation  
 ```
-${researcherRoot}/
-  ∟${projectName}/
-    ∟derivatives/
       ∟anat/
         ∟segmentation/
           ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_seg-CSF.nii.gz
@@ -96,9 +84,6 @@ ${researcherRoot}/
   - coregistering multiple acquisitions of the same modality within a scanning session  
   - coregistering multiple modalities within scanning sessions  
 ```
-${researcherRoot}/
-  ∟${projectName}/
-    ∟derivatives/
       ∟anat/
       | ∟native/
       |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_native.nii.gz
@@ -110,9 +95,6 @@ ${researcherRoot}/
   - between session registrations, i.e., register to participant baseline or average  
   - registration to common space  
 ```
-${researcherRoot}/
-  ∟${projectName}/
-    ∟derivatives/
       ∟anat/
       | ∟reg_${space}/
       |   ∟sub-${subject}_ses-${session}_acq-${acq}_${mod}_reg-${space}.nii.gz
