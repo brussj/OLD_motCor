@@ -14,5 +14,5 @@ Inplane T1	inplaneT1	T1-weighted matched to functional acquisition
 Inplane T2	inplaneT2	T2-weighted matched to functional acquisition
 Angiography	angio	
 Spectroscopy	MRS	
-BOLD  bold  
-DWI dwi 
+BOLD	bold	
+DWI	dwi	
