@@ -13,4 +13,4 @@
     - CIT168
     - HCP S1200
     - Koscik HCP
-3. Motion correction (*e.g. https://stnava.github.io/fMRIANTs , https://github.com/ANTsX/ANTsR/blob/master/R/preprocessfMRI.R#L44-L46*)
+3. Motion correction (*e.g. https://stnava.github.io/fMRIANTs,https://github.com/ANTsX/ANTsR/blob/master/R/preprocessfMRI.R#L44-L46*)
