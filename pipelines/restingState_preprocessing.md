@@ -32,3 +32,39 @@
   * anat to atlas (*I.*)  
   * b0 to anat (*III.*)  
   * func (*avg*) to b0 (*IV.*)  
+* Push data to standard space  
+  * Multi-region segmentation  
+    * Cortex, Insula, Thalamus, Basal Ganglia, Cerebellum, Brainstem and Pons  
+      * In atlas space  
+      * Joint Label Fusion per anat, pushed to standard  
+  * Tissue Class segmentation  
+    * anat, pushed to standard  
+  * Skull-stripping  
+* Smoothing  
+  * Per region, differentially (*e.g. STN < Cortex*)  
+    * SUSAN (*FSL*)  
+    * 3dBlurToFWHM (*AFNI*)  
+    * SmoothImage (*ANTs*)  
+* Nuisance regression  
+  * Motion parameters  
+    * Bandpass these same as func (*1dBandpass*)  
+  * WM, CSF  
+    * Model the timecourse from an ROI (*e.g. FEAT*)  
+    * CompCor  
+  * Global signal  
+    * Positive and Negative correlations (*~mean centered*)  
+  * ICA-based removal of noise  
+    * melodic & fsl_regfilt  
+    * ICA-AROMA  
+  * Filtering  
+    * Lowpass filter (*retain "high" frequencies*)  
+    * Bandpass filter  
+      * 0.008 to 0.8 HZ  
+      * 0.009 to 0.1 Hz  
+      * 0.01 to 0.1 Hz  
+* Motion scrubbing  
+* Concatenate multiple runs  
+  * Normalize final file  
+    * subtract mean, divide by standard deviation, add value 1000 (*timecourse will be centered around 1000*)  
+* Celebrate life, drink a beer  
+ 
