@@ -68,3 +68,9 @@
     * subtract mean, divide by standard deviation, add value 1000 (*timecourse will be centered around 1000*)  
 * Celebrate life, drink a beer  
  
+
+
+
+
+
+# Misc  
