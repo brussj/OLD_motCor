@@ -74,9 +74,12 @@
 
 # fMRI Motion Correction  
  ## Background  
- some boring text  
- more boring text  
- even more boring text  
+ * Conclusions will be drawn from intensity values, derived from greyscale values across time    
+ * If voxels are misaligned, incorrect conclusions (or no conclusions at all) might be made  
+ * An exaggerated example  
+ 
+  ![ExampleEPIMotion](https://github.com/brussj/nimg_core/blob/master/pipelines/motionCorrectionExample.png)  
+ 
  ## antsMotionCorr (vs. 3dvolreg)  
  * More control over motion correction parameters (nonlinear over affine, more iterations, etc.)  
  * Ability to sum motion correction parameters into other registrations (EPI blip-up/blip-down, b0 to T1, T1 to MNI, etc.)  
