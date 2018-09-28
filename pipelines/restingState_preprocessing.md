@@ -84,7 +84,7 @@
  
  ### 3dvolreg (AFNI) vs. ANTs  
  * EPI run has 168 timepoints.  Use halway point as target for motion correction (but made a mistake and used 64, not 84)  
-   * For testing, this won't matter.  For real-world, this would matter a bit more  
+   * For testing, this won't matter.  For real-world, this would matter (kinda, sorta)  
  * For simplicity, used the collapsed average output from vanilla run of 3d volreg  
  
  some stuff
