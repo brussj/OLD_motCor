@@ -125,6 +125,10 @@ rot1 rot2 rot3 trans1 trans2 trans3
 ![afniAntsMotionCorrFinal](https://github.com/brussj/nimg_core/blob/master/pipelines/AFNI_ANTs_motParams_ANTsDeg_FlippedSwapped.png)  
 
 ## Final thoughts
-* Experiment with different parameters to antsMotionCorr
+* For small scale motion, there are minimal differnces between antsMotionCorr and 3dvolreg.  For large motions (see ~TR 146), even with minimal settings, ANTs looks to do a better job in correcting that motion  
+* Experiment with different parameters to antsMotionCorr  
+  * More iterations, more sub-levels, differnt amounts of smoothing  
+  * Possibly add a nonlinear component to handle larger motions and distortions  
+* Rather than use the 6 motion parameters as nuisance regressors, look into Framewise Displacement
  
 ![antsMotionCorrStats](https://github.com/brussj/nimg_core/blob/master/antsMotionCorrPlot_test.png)  
