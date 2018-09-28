@@ -97,7 +97,7 @@
 ```  
 Deg = Rad*180/3.14159  
 ```  
-  * One problems solved  
+  * One problem solved  
   
   ![afniAntsMotionCorrRaw](https://github.com/brussj/nimg_core/blob/master/pipelines/AFNI_ANTs_motParams_ANTsDeg.png)  
  
