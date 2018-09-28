@@ -94,13 +94,12 @@
  * At first glance, everything looks wrong with ANTs.  
    * AFNi uses mm for translations, degrees for rotations, under the assumption that near the edge of the brain that 1 deg ~= 1mm.  ANTs appears to use radians.
   * Quickly converted between from radians to degrees via:
-```
+```  
 Deg = Rad*180/3.14159  
-
-```
+```  
   * One problems solved  
   
- ![afniAntsMotionCorrRaw](https://github.com/brussj/nimg_core/blob/master/pipelines/AFNI_ANTs_motParams_Raw.png)  
+ ![afniAntsMotionCorrRaw](https://github.com/brussj/nimg_core/blob/master/pipelines/AFNI_ANTs_motParams_ANTsDeg.png)  
  
  some stuff
 ![antsMotionCorrStats](https://github.com/brussj/nimg_core/blob/master/antsMotionCorrPlot_test.png)  
