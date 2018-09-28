@@ -86,7 +86,20 @@
  * EPI run has 168 timepoints.  Use halway point as target for motion correction (but made a mistake and used 64, not 84)  
    * For testing, this won't matter.  For real-world, this would matter (kinda, sorta)  
  * For simplicity, used the collapsed average output from vanilla run of 3d volreg  
+ * Ran the affine version for use with applying the motion correction to the data  
+   * Could have calculated the motion parameter estimates (rotations and translations) from the Affine info but just re-ran with a rigid-body (6 paramter) version and logged the MOCO data
  
+ ![afniAntsMotionCorrRaw](https://github.com/brussj/nimg_core/blob/master/pipelines/AFNI_ANTs_motParams_Raw.png)  
+ 
+ * At first glance, everything looks wrong with ANTs.  
+   * AFNi uses mm for translations, degrees for rotations, under the assumption that near the edge of the brain that 1 deg ~= 1mm.  ANTs appears to use radians.
+  * Quickly converted between from radians to degrees via:
+```
+Deg = Rad*180/3.14159  
+
+```
+  * One problems solved  
+  
  ![afniAntsMotionCorrRaw](https://github.com/brussj/nimg_core/blob/master/pipelines/AFNI_ANTs_motParams_Raw.png)  
  
  some stuff
