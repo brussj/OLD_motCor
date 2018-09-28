@@ -87,5 +87,7 @@
    * For testing, this won't matter.  For real-world, this would matter (kinda, sorta)  
  * For simplicity, used the collapsed average output from vanilla run of 3d volreg  
  
+ ![afniAntsMotionCorrRaw](https://github.com/brussj/nimg_core/blob/master/pipelines/AFNI_ANTs_motParams_Raw.png)  
+ 
  some stuff
 ![antsMotionCorrStats](https://github.com/brussj/nimg_core/blob/master/antsMotionCorrPlot_test.png)  
