@@ -124,7 +124,7 @@ rot1 rot2 rot3 trans1 trans2 trans3
  * Putting this all back together, antsMotionCorr and 3dvolreg look to be quite similar  
 ![afniAntsMotionCorrFinal](https://github.com/brussj/nimg_core/blob/master/pipelines/AFNI_ANTs_motParams_ANTsDeg_FlippedSwapped.png)  
 
-
+## Final thoughts
+* Experiment with different parameters to antsMotionCorr
  
- some stuff
 ![antsMotionCorrStats](https://github.com/brussj/nimg_core/blob/master/antsMotionCorrPlot_test.png)  
