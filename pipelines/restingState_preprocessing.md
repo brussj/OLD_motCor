@@ -73,5 +73,19 @@
 
 
 
-# Misc  
+# fMRI Motion Correction  
+ ## Background  
+ some boring text  
+ more boring text  
+ even more boring text  
+ ## antsMotionCorr (vs. 3dvolreg)  
+ * More control over motion correction parameters (nonlinear over affine, more iterations, etc.)  
+ * Ability to sum motion correction parameters into other registrations (EPI blip-up/blip-down, b0 to T1, T1 to MNI, etc.)  
+ 
+ ### 3dvolreg (AFNI) vs. ANTs  
+ * EPI run has 168 timepoints.  Use halway point as target for motion correction (but made a mistake and used 64, not 84)  
+   * For testing, this won't matter.  For real-world, this would matter a bit more  
+ * For simplicity, used the collapsed average output from vanilla run of 3d volreg  
+ 
+ some stuff
 ![antsMotionCorrStats](https://github.com/brussj/nimg_core/blob/master/antsMotionCorrPlot_test.png)  
