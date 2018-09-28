@@ -72,7 +72,6 @@
 
 
 
-
 # fMRI Motion Correction  
  ## Background  
  some boring text  
@@ -93,18 +92,38 @@
  
  * At first glance, everything looks wrong with antsMotionCorr.  
    * AFNi uses mm for translations, degrees for rotations, under the assumption that near the edge of the brain that 1 deg ~= 1mm.  ANTs appears to use radians.
-  * Quickly converted between from radians to degrees via:
+   * Quickly converted between from radians to degrees via:
 ```  
 Deg = Rad*180/3.14159  
 ```  
-  * One problem solved  
+ * One problem solved  
   
-  ![afniAntsMotionCorrRaw](https://github.com/brussj/nimg_core/blob/master/pipelines/AFNI_ANTs_motParams_ANTsDeg.png)  
+ ![afniAntsMotionCorrDeg](https://github.com/brussj/nimg_core/blob/master/pipelines/AFNI_ANTs_motParams_ANTsDeg.png)  
  
  * Pulled apart the rotations and translations to visually compare one at a time  
  * It looks like AFNI and ANTs have a different order and a few differing directions  
  
-  ![afniAntsMotionCorrRaw](https://github.com/brussj/nimg_core/blob/master/pipelines/AFNI_ANTs_RotationsTranslations_base.png)  
+ ![afniAntsMotionCorrSplit](https://github.com/brussj/nimg_core/blob/master/pipelines/AFNI_ANTs_RotationsTranslations_base.png)  
+
+ * From the man page of 3dvolreg  
+```  
+The output is in 9 ASCII formatted columns:  
+n  roll  pitch  yaw  dS  dL  dP  rmsold rmsnew  
+```  
+ * The orginal mapping to antsMotionCorr  
+```
+rot1 rot2 rot3 trans1 trans2 trans3  
+```
+ * The new mappign to antsMotionCorr to match 3dvolreg  
+```
+-rot3 -rot1 -rot2 trans3 trans1 -trans2  
+```
+* Putting this all back together, antsMotionCorr and 3dvolreg look to be quite similar  
+
+some pic
+
+
+ ![afniAntsMotionCorrSplitReordered](https://github.com/brussj/nimg_core/blob/master/pipelines/AFNI_ANTs_RotationsTranslations_FlippedSwapped.png)  
  
  some stuff
 ![antsMotionCorrStats](https://github.com/brussj/nimg_core/blob/master/antsMotionCorrPlot_test.png)  
