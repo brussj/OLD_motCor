@@ -67,7 +67,32 @@
   * Normalize final file  
     * subtract mean, divide by standard deviation, add value 1000 (*timecourse will be centered around 1000*)  
 * Celebrate life, drink a beer  
- 
+
+
+
+
+
+# Potiential masking & workflow  
+* Co-register MNI152 (1mm) to JLF sub-atlases  
+* Create a multi-label MNI mask  
+  * Cortical GM  (FreeSurfer, HCP derived)  
+    * May want to separate Insula
+  * Thalamus (Morel)
+  * Basal Ganglia (Harvard-Oxford or some other method)  
+  * Cerebellum (SUIT)  
+  * Brainstem, Pons, Medulla, etc.  
+  * Leftover regions (mostly WM, anything else?)  
+* Create a slightly smoothed version (soft edges) for use after func processing  
+* Warp labels to JLF sub-atlases, hand-edit (only have to do once)  
+* Multi-atlas JLF to subject anatomical (vote on/decide winner)  
+* Register anatomical to MNI, use JLF masks for cost-functioning  
+* Register mean func with anat, combine with anat to atlas  
+* Clip func by MNI-space JLF mask (or possibly subejct specific mask now in MNI space)  
+* Process regions independenetly  
+* Re-clip func processed pieces by smoothed JLF mask, recombine  
+* Concatenate all func runs, demean, div by stdev, scale, etc. 
+* Post-processing  
+
 
 
 
